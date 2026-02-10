@@ -4,10 +4,14 @@ steps:
       - gcloud
       - functions
       - deploy
-      - glcloudf # The name in the Console
+      - gcloudf
       - --region=us-west2
       - --source=.
       - --trigger-http
-      - --runtime=python310 # Match your runtime
-      - --entry-point=my_test_function # Matches the 'def' in main.py
-      - --allow-unauthenticated # Optional: makes URL public
+      - --runtime=python310
+      - --entry-point=my_test_function
+      - --allow-unauthenticated
+
+# Add this section below:
+options:
+  logging: CLOUD_LOGGING_ONLY
