@@ -1,0 +1,13 @@
+steps:
+  - name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    args:
+      - gcloud
+      - functions
+      - deploy
+      - glcloudf # The name in the Console
+      - --region=us-west2
+      - --source=.
+      - --trigger-http
+      - --runtime=python310 # Match your runtime
+      - --entry-point=my_test_function # Matches the 'def' in main.py
+      - --allow-unauthenticated # Optional: makes URL public
